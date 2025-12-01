@@ -1,5 +1,6 @@
 import { motion, useInView } from 'framer-motion'
 import { useRef } from 'react'
+import { TrendingUp, Target, Rocket, Trophy } from 'lucide-react'
 
 const Goals2026 = () => {
   const ref = useRef(null)
@@ -123,10 +124,10 @@ const Goals2026 = () => {
 
             <div className="grid grid-cols-2 gap-6">
               {[
-                { word: 'More', desc: 'Speakers, events, opportunities', emoji: '📈' },
-                { word: 'Deeper', desc: 'Projects, learning, impact', emoji: '🎯' },
-                { word: 'Bigger', desc: 'Ambition, reach, vision', emoji: '🚀' },
-                { word: 'National', desc: 'Leadership and recognition', emoji: '🏆' }
+                { word: 'More', desc: 'Speakers, events, opportunities', icon: TrendingUp },
+                { word: 'Deeper', desc: 'Projects, learning, impact', icon: Target },
+                { word: 'Bigger', desc: 'Ambition, reach, vision', icon: Rocket },
+                { word: 'National', desc: 'Leadership and recognition', icon: Trophy }
               ].map((item, i) => (
                 <motion.div
                   key={i}
@@ -136,7 +137,9 @@ const Goals2026 = () => {
                   whileHover={{ scale: 1.1, rotate: 2 }}
                   className="bg-white/15 backdrop-blur-md rounded-2xl p-8 text-center border border-white/20 hover:bg-white/25 transition-all"
                 >
-                  <div className="text-5xl mb-4">{item.emoji}</div>
+                  <div className="mb-4 flex justify-center">
+                    <item.icon size={48} className="text-white" strokeWidth={1.5} />
+                  </div>
                   <div className="font-display font-black text-4xl text-uo-gold mb-3">{item.word}</div>
                   <div className="text-white/90 text-sm font-medium">{item.desc}</div>
                 </motion.div>

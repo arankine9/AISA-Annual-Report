@@ -1,5 +1,6 @@
 import { motion, useInView } from 'framer-motion'
 import { useRef } from 'react'
+import { Building2, Users, Lightbulb } from 'lucide-react'
 
 const SFSiteTour = () => {
   const ref = useRef(null)
@@ -80,9 +81,9 @@ const SFSiteTour = () => {
 
         <div className="grid lg:grid-cols-3 gap-8 mb-16">
           {[
-            { emoji: '🏢', title: 'Inside Access', desc: 'Members toured the offices where AI products serving millions are built, seeing firsthand what it takes to ship at scale.' },
-            { emoji: '🤝', title: 'Real Connections', desc: 'Face-to-face conversations with engineers, researchers, VCs, and founders who are shaping the industry.' },
-            { emoji: '💡', title: 'Career Clarity', desc: 'Students left with concrete understanding of what roles exist, what companies value, and how to position themselves.' }
+            { icon: Building2, title: 'Inside Access', desc: 'Members toured the offices where AI products serving millions are built, seeing firsthand what it takes to ship at scale.' },
+            { icon: Users, title: 'Real Connections', desc: 'Face-to-face conversations with engineers, researchers, VCs, and founders who are shaping the industry.' },
+            { icon: Lightbulb, title: 'Career Clarity', desc: 'Students left with concrete understanding of what roles exist, what companies value, and how to position themselves.' }
           ].map((item, i) => (
             <motion.div
               key={i}
@@ -92,7 +93,9 @@ const SFSiteTour = () => {
               whileHover={{ scale: 1.05, y: -5 }}
               className="bg-white/15 backdrop-blur-md rounded-3xl p-10 border border-white/20 hover:bg-white/20 transition-all"
             >
-              <div className="text-6xl mb-6">{item.emoji}</div>
+              <div className="mb-6 text-uo-gold">
+                <item.icon size={64} strokeWidth={1.5} />
+              </div>
               <h3 className="font-display font-black text-3xl text-white mb-5">{item.title}</h3>
               <p className="text-white/90 leading-relaxed text-lg font-medium">
                 {item.desc}

@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion'
 import { useInView } from 'framer-motion'
 import { useRef } from 'react'
+import { Check } from 'lucide-react'
 
 const PresidentLetter = () => {
   const ref = useRef(null)
@@ -83,7 +84,9 @@ const PresidentLetter = () => {
                     transition={{ delay: 0.3 + (i * 0.1) }}
                     className="flex items-start gap-3 p-4 bg-gradient-to-br from-gray-50 to-white rounded-xl border border-gray-100 hover:border-uo-gold/30 hover:shadow-lg transition-all"
                   >
-                    <div className="flex-shrink-0 w-6 h-6 rounded-full bg-gradient-to-br from-uo-green to-uo-gold flex items-center justify-center text-white text-sm font-bold">✓</div>
+                    <div className="flex-shrink-0 w-6 h-6 rounded-full bg-gradient-to-br from-uo-green to-uo-gold flex items-center justify-center text-white">
+                      <Check size={14} strokeWidth={3} />
+                    </div>
                     <span className="text-gray-700 leading-relaxed">{item}</span>
                   </motion.div>
                 ))}

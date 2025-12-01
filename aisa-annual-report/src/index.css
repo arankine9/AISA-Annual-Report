@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Crimson+Pro:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
 
 @import "tailwindcss";
 
@@ -6,8 +6,8 @@
   --color-uo-green: #154733;
   --color-uo-gold: #FEE123;
 
-  --font-family-display: Inter, system-ui, -apple-system, sans-serif;
-  --font-family-body: 'Crimson Pro', Georgia, serif;
+  --font-family-display: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  --font-family-body: 'Inter', system-ui, -apple-system, sans-serif;
 
   --animate-blob: blob 7s infinite;
 
