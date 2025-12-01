@@ -9,12 +9,10 @@ import SFSiteTour from './components/SFSiteTour'
 import FeaturedProjects from './components/FeaturedProjects'
 import Goals2026 from './components/Goals2026'
 import ThankYou from './components/ThankYou'
-import Background3D from './components/Background3D'
 
 function App() {
   return (
     <div className="relative min-h-screen">
-      <Background3D />
       <Navigation />
       <main>
         <Hero />
