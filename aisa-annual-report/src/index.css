@@ -1,6 +1,23 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Crimson+Pro:wght@300;400;500;600;700&display=swap');
 
 @import "tailwindcss";
+
+@theme {
+  --color-uo-green: #154733;
+  --color-uo-gold: #FEE123;
+
+  --font-family-display: Inter, system-ui, -apple-system, sans-serif;
+  --font-family-body: 'Crimson Pro', Georgia, serif;
+
+  --animate-blob: blob 7s infinite;
+
+  @keyframes blob {
+    0% { transform: translate(0px, 0px) scale(1); }
+    33% { transform: translate(30px, -50px) scale(1.1); }
+    66% { transform: translate(-20px, 20px) scale(0.9); }
+    100% { transform: translate(0px, 0px) scale(1); }
+  }
+}
 
 @layer base {
   html {
@@ -9,14 +26,55 @@
 
   body {
     @apply bg-white text-gray-900 antialiased;
+    font-family: var(--font-family-body);
     margin: 0;
     padding: 0;
     overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4, h5, h6, button, .font-display {
+    font-family: var(--font-family-display);
+  }
+
+  /* Better section transitions */
+  section {
+    position: relative;
+    isolation: isolate;
+  }
+
+  /* Ensure smooth animations */
+  * {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
 }
 
 @layer utilities {
   .text-balance {
     text-wrap: balance;
+  }
+
+  /* Custom gradient text */
+  .gradient-text {
+    /* bg-gradient-to-r is correct Tailwind syntax, not bg-linear-to-r */
+    @apply bg-gradient-to-r from-uo-green to-uo-gold bg-clip-text text-transparent;
+  }
+
+  /* Animation delays for staggered effects */
+  .animation-delay-2000 {
+    animation-delay: 2s;
+  }
+
+  .animation-delay-4000 {
+    animation-delay: 4s;
+  }
+
+  /* Glow effects */
+  .glow-green {
+    box-shadow: 0 0 40px rgba(21, 71, 51, 0.3);
+  }
+
+  .glow-gold {
+    box-shadow: 0 0 40px rgba(254, 225, 35, 0.3);
   }
 }

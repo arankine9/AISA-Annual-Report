@@ -19,22 +19,37 @@ const SFSiteTour = () => {
   ]
 
   return (
-    <section id="tour" className="py-24 bg-gradient-to-br from-uo-green via-uo-green/95 to-uo-green/90">
-      <div className="max-w-7xl mx-auto px-6">
+    <section id="tour" className="relative py-32 bg-gradient-to-br from-uo-green via-uo-green/95 to-uo-green/90 overflow-hidden">
+      {/* Diagonal stripes overlay */}
+      <div className="absolute inset-0 opacity-10">
+        <div className="absolute inset-0" style={{
+          backgroundImage: 'repeating-linear-gradient(-45deg, transparent, transparent 35px, rgba(254, 225, 35, 0.3) 35px, rgba(254, 225, 35, 0.3) 70px)',
+        }}></div>
+      </div>
+
+      {/* Gradient circles */}
+      <div className="absolute top-0 right-0 w-96 h-96 bg-uo-gold/20 rounded-full blur-3xl"></div>
+      <div className="absolute bottom-0 left-0 w-96 h-96 bg-white/10 rounded-full blur-3xl"></div>
+
+      <div className="relative max-w-7xl mx-auto px-6">
         <motion.div
           ref={ref}
           initial={{ opacity: 0, y: 50 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8 }}
-          className="text-center mb-16"
+          className="text-center mb-20"
         >
-          <span className="text-uo-gold font-semibold text-sm uppercase tracking-wider">
-            Beyond the Classroom
-          </span>
-          <h2 className="font-display font-bold text-5xl md:text-6xl text-white mt-4 mb-6">
+          <motion.div
+            initial={{ scale: 0.9 }}
+            animate={isInView ? { scale: 1 } : {}}
+            className="inline-block px-6 py-3 bg-uo-gold/30 backdrop-blur-md rounded-full text-uo-gold text-sm font-bold mb-6 border-2 border-uo-gold/40"
+          >
+            BEYOND THE CLASSROOM
+          </motion.div>
+          <h2 className="font-display font-black text-7xl md:text-8xl text-white mb-6 tracking-tight">
             San Francisco Site Tour
           </h2>
-          <p className="text-xl text-white/90 max-w-3xl mx-auto">
+          <p className="text-2xl text-white/95 max-w-4xl mx-auto font-medium leading-relaxed">
             We took members to Silicon Valley to see firsthand where the future of technology is being built—and to meet the people building it.
           </p>
         </motion.div>
@@ -43,7 +58,7 @@ const SFSiteTour = () => {
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ delay: 0.3, duration: 0.8 }}
-          className="grid grid-cols-2 md:grid-cols-5 gap-4 mb-12"
+          className="grid grid-cols-2 md:grid-cols-5 gap-4 mb-16"
         >
           {companies.map((company, index) => (
             <motion.div
@@ -51,65 +66,51 @@ const SFSiteTour = () => {
               initial={{ opacity: 0, scale: 0.9 }}
               animate={isInView ? { opacity: 1, scale: 1 } : {}}
               transition={{ duration: 0.4, delay: index * 0.05 }}
-              className="bg-white/10 backdrop-blur-md rounded-xl p-4 text-center hover:bg-white/20 transition-all"
+              whileHover={{ scale: 1.05, y: -4 }}
+              className="group relative bg-white/15 backdrop-blur-md rounded-2xl p-6 text-center hover:bg-white/25 transition-all border border-white/20 hover:border-uo-gold/50"
             >
-              <div className="font-bold text-white text-lg mb-1">{company.name}</div>
-              <div className="text-white/60 text-xs">{company.type}</div>
+              <div className="absolute -inset-0.5 bg-gradient-to-r from-uo-gold to-yellow-400 rounded-2xl opacity-0 group-hover:opacity-20 blur-lg transition-opacity"></div>
+              <div className="relative">
+                <div className="font-black text-white text-xl mb-2 group-hover:text-uo-gold transition-colors">{company.name}</div>
+                <div className="text-white/70 text-sm font-medium">{company.type}</div>
+              </div>
             </motion.div>
           ))}
         </motion.div>
 
-        <div className="grid lg:grid-cols-3 gap-8">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={isInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ delay: 0.4, duration: 0.6 }}
-            className="bg-white/10 backdrop-blur-md rounded-2xl p-8"
-          >
-            <div className="text-4xl mb-4">🏢</div>
-            <h3 className="font-display font-bold text-2xl text-white mb-4">Inside Access</h3>
-            <p className="text-white/80 leading-relaxed">
-              Members toured the offices where AI products serving millions are built, seeing firsthand what it takes to ship at scale.
-            </p>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={isInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ delay: 0.5, duration: 0.6 }}
-            className="bg-white/10 backdrop-blur-md rounded-2xl p-8"
-          >
-            <div className="text-4xl mb-4">🤝</div>
-            <h3 className="font-display font-bold text-2xl text-white mb-4">Real Connections</h3>
-            <p className="text-white/80 leading-relaxed">
-              Face-to-face conversations with engineers, researchers, VCs, and founders who are shaping the industry.
-            </p>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={isInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ delay: 0.6, duration: 0.6 }}
-            className="bg-white/10 backdrop-blur-md rounded-2xl p-8"
-          >
-            <div className="text-4xl mb-4">💡</div>
-            <h3 className="font-display font-bold text-2xl text-white mb-4">Career Clarity</h3>
-            <p className="text-white/80 leading-relaxed">
-              Students left with concrete understanding of what roles exist, what companies value, and how to position themselves.
-            </p>
-          </motion.div>
+        <div className="grid lg:grid-cols-3 gap-8 mb-16">
+          {[
+            { emoji: '🏢', title: 'Inside Access', desc: 'Members toured the offices where AI products serving millions are built, seeing firsthand what it takes to ship at scale.' },
+            { emoji: '🤝', title: 'Real Connections', desc: 'Face-to-face conversations with engineers, researchers, VCs, and founders who are shaping the industry.' },
+            { emoji: '💡', title: 'Career Clarity', desc: 'Students left with concrete understanding of what roles exist, what companies value, and how to position themselves.' }
+          ].map((item, i) => (
+            <motion.div
+              key={i}
+              initial={{ opacity: 0, y: 30 }}
+              animate={isInView ? { opacity: 1, y: 0 } : {}}
+              transition={{ delay: 0.4 + (i * 0.1), duration: 0.6 }}
+              whileHover={{ scale: 1.05, y: -5 }}
+              className="bg-white/15 backdrop-blur-md rounded-3xl p-10 border border-white/20 hover:bg-white/20 transition-all"
+            >
+              <div className="text-6xl mb-6">{item.emoji}</div>
+              <h3 className="font-display font-black text-3xl text-white mb-5">{item.title}</h3>
+              <p className="text-white/90 leading-relaxed text-lg font-medium">
+                {item.desc}
+              </p>
+            </motion.div>
+          ))}
         </div>
 
         <motion.div
           initial={{ opacity: 0 }}
           animate={isInView ? { opacity: 1 } : {}}
           transition={{ delay: 0.8, duration: 0.8 }}
-          className="mt-12 bg-white/10 backdrop-blur-md rounded-2xl p-8 text-center"
+          className="bg-white rounded-3xl p-12 shadow-2xl max-w-4xl mx-auto"
         >
-          <p className="text-xl text-white italic mb-4">
+          <p className="text-2xl text-uo-green italic mb-5 leading-relaxed font-bold">
             "Visiting Anthropic and talking to the researchers working on Claude changed how I think about my career. I realized that the work I want to do is happening right now, and I can be part of it."
           </p>
-          <p className="text-white/60">— Site Tour Participant</p>
+          <p className="text-uo-green/70 font-semibold text-lg">— Site Tour Participant</p>
         </motion.div>
       </div>
     </section>
