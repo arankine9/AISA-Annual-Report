@@ -13,7 +13,7 @@ const Hero = () => {
         <div className="absolute bottom-20 left-1/2 w-96 h-96 bg-uo-gold rounded-full mix-blend-multiply filter blur-3xl animate-blob animation-delay-4000"></div>
       </div>
 
-      <div className="relative z-10 max-w-7xl mx-auto px-6 py-32 text-center">
+      <div className="relative z-10 max-w-7xl mx-auto px-6 py-12 md:py-20 text-center">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
@@ -23,22 +23,22 @@ const Hero = () => {
             initial={{ scale: 0.9 }}
             animate={{ scale: 1 }}
             transition={{ duration: 0.6 }}
-            className="inline-block px-6 py-3 bg-uo-gold/30 backdrop-blur-md rounded-full text-uo-gold text-base font-bold mb-10 border border-uo-gold/30"
+            className="inline-block px-6 py-3 bg-uo-gold/30 backdrop-blur-md rounded-full text-uo-gold text-base font-bold mb-6 border border-uo-gold/30"
           >
             2024-2025 BI-ANNUAL REPORT
           </motion.div>
 
-          <h1 className="font-display font-black text-7xl md:text-9xl lg:text-[12rem] text-white mb-8 tracking-tighter leading-none">
+          <h1 className="font-display font-black text-5xl md:text-7xl lg:text-[7rem] text-white mb-4 tracking-tight leading-none">
             Building the
             <br />
             <span className="bg-gradient-to-r from-uo-gold via-yellow-300 to-uo-gold bg-clip-text text-transparent">
               Future
             </span>
             <br />
-            <span className="text-6xl md:text-7xl lg:text-8xl">at University of Oregon</span>
+            <span className="text-3xl md:text-4xl lg:text-5xl">at the University of Oregon</span>
           </h1>
 
-          <p className="text-2xl md:text-3xl text-white/95 max-w-4xl mx-auto mb-14 leading-relaxed font-medium">
+          <p className="text-lg md:text-xl text-white/95 max-w-4xl mx-auto mb-8 leading-relaxed font-medium">
             From <span className="text-uo-gold font-bold">10 to 250+ members</span>.
             From ideas to <span className="text-uo-gold font-bold">Oregon's largest hackathon</span>.
             From students to <span className="text-uo-gold font-bold">national leaders</span> in AI education.
@@ -75,7 +75,7 @@ const Hero = () => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 1.5, duration: 1 }}
-          className="absolute bottom-16 left-1/2 transform -translate-x-1/2"
+          className="absolute bottom-10 left-1/2 transform -translate-x-1/2"
         >
           <div className="flex flex-col items-center text-white/70">
             <span className="text-sm font-semibold mb-3 uppercase tracking-wider">Scroll to explore</span>
