@@ -26,17 +26,19 @@ const Navigation = () => {
     <motion.nav
       initial={{ y: -100 }}
       animate={{ y: 0 }}
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled ? 'bg-white/95 backdrop-blur-md shadow-md' : 'bg-transparent'
-      }`}
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? 'bg-white/95 backdrop-blur-md shadow-md' : 'bg-transparent'
+        }`}
     >
       <div className="max-w-7xl mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
           <a href="#" className="flex items-center space-x-3">
-            <div className="w-10 h-10 bg-uo-green rounded-lg flex items-center justify-center">
-              <span className="text-uo-gold font-bold text-xl">AI</span>
+            <div className={`w-10 h-10 rounded-lg flex items-center justify-center ${isScrolled ? 'bg-uo-green' : 'bg-white/10 backdrop-blur-sm'
+              }`}>
+              <span className={`font-bold text-xl ${isScrolled ? 'text-uo-gold' : 'text-white'
+                }`}>AI</span>
             </div>
-            <span className="font-display font-bold text-xl text-uo-green">
+            <span className={`font-display font-bold text-xl ${isScrolled ? 'text-uo-green' : 'text-white'
+              }`}>
               UO AISA
             </span>
           </a>
@@ -46,7 +48,10 @@ const Navigation = () => {
               <a
                 key={item.href}
                 href={item.href}
-                className="text-sm font-medium text-gray-700 hover:text-uo-green transition-colors"
+                className={`text-sm font-medium transition-colors ${isScrolled
+                    ? 'text-gray-700 hover:text-uo-green'
+                    : 'text-white/90 hover:text-white'
+                  }`}
               >
                 {item.label}
               </a>

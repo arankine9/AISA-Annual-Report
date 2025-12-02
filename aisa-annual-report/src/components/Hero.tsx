@@ -70,24 +70,7 @@ const Hero = () => {
           </motion.div>
         </motion.div>
 
-        {/* Scroll indicator */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 1.5, duration: 1 }}
-          className="absolute bottom-10 left-1/2 transform -translate-x-1/2"
-        >
-          <div className="flex flex-col items-center text-white/70">
-            <span className="text-sm font-semibold mb-3 uppercase tracking-wider">Scroll to explore</span>
-            <motion.div
-              animate={{ y: [0, 12, 0] }}
-              transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
-              className="w-7 h-12 border-3 border-white/50 rounded-full p-1.5 bg-white/5 backdrop-blur-sm"
-            >
-              <div className="w-2 h-4 bg-uo-gold rounded-full mx-auto"></div>
-            </motion.div>
-          </div>
-        </motion.div>
+
       </div>
     </section>
   )
