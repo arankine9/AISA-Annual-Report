@@ -95,17 +95,11 @@ const ThankYou = () => {
           transition={{ delay: 0.8, duration: 0.8 }}
           className="text-center"
         >
-          <div className="flex items-center justify-center space-x-5 mb-8">
-            <div className="w-16 h-16 bg-gradient-to-br from-uo-green to-uo-green/80 rounded-2xl flex items-center justify-center shadow-lg">
-              <span className="text-uo-gold font-black text-3xl">AI</span>
-            </div>
-            <span className="font-display font-black text-4xl text-uo-green">UO AISA</span>
-          </div>
           <p className="text-gray-700 font-semibold text-lg mb-3">
             University of Oregon • Eugene, OR 97403
           </p>
           <p className="text-gray-500 text-base font-medium">
-            © 2024-2025 AI Student Association • Building the future, one student at a time
+            © 2025 AI Student Association • Building the future, one student at a time
           </p>
         </motion.div>
       </div>

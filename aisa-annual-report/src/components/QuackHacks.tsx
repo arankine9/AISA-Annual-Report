@@ -56,11 +56,11 @@ const QuackHacks = () => {
               initial={{ opacity: 0, scale: 0.8, y: 30 }}
               animate={isInView ? { opacity: 1, scale: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: index * 0.15 }}
-              whileHover={{ scale: 1.05, y: -8 }}
+              whileHover={{ scale: 1.05, y: -8, transition: { duration: 0.2, ease: "easeOut" } }}
               className="group relative bg-white rounded-3xl p-10 shadow-2xl border-4 border-white hover:shadow-[0_20px_60px_rgba(0,0,0,0.3)] transition-all"
             >
-              <div className={`absolute -inset-1 bg-gradient-to-r ${stat.color} rounded-3xl opacity-0 group-hover:opacity-100 blur-xl transition-opacity -z-10`}></div>
-              <div className="mb-6 group-hover:scale-125 transition-transform">
+
+              <div className="mb-6">
                 <stat.icon size={64} className="text-uo-green" strokeWidth={1.5} />
               </div>
               <div className="font-display font-black text-8xl text-transparent bg-gradient-to-br from-uo-green to-uo-green/70 bg-clip-text mb-4">
